@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=kbdspeed
+NoDisplay=true
+Exec=xset r rate 210 40
