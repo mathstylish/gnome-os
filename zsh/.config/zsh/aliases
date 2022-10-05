@@ -43,3 +43,6 @@ alias cpd='pwd | xclip -sel clip'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias lg='lazygit'
 cpf() { cat $1 | xclip -sel clip  }                                 # content file to clipboard
+cgu() {
+  ln -sf $HOME/.ssh/$1 $HOME/.ssh/current
+}
