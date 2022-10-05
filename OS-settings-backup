@@ -1,0 +1,304 @@
+[ca/desrt/dconf-editor]
+saved-pathbar-path='/org/gnome/shell/keybindings/focus-active-notification'
+saved-view='/org/gnome/'
+window-height=711
+window-is-maximized=false
+window-width=671
+
+[org/gnome/control-center]
+last-panel='background'
+window-state=(1350, 726, false)
+
+[org/gnome/desktop/a11y/applications]
+screen-reader-enabled=false
+
+[org/gnome/desktop/app-folders]
+folder-children=['Utilities', 'YaST']
+
+[org/gnome/desktop/app-folders/folders/Utilities]
+apps=['gnome-abrt.desktop', 'gnome-system-log.desktop', 'nm-connection-editor.desktop', 'org.gnome.baobab.desktop', 'org.gnome.Connections.desktop', 'org.gnome.DejaDup.desktop', 'org.gnome.Dictionary.desktop', 'org.gnome.DiskUtility.desktop', 'org.gnome.eog.desktop', 'org.gnome.Evince.desktop', 'org.gnome.FileRoller.desktop', 'org.gnome.fonts.desktop', 'org.gnome.seahorse.Application.desktop', 'org.gnome.tweaks.desktop', 'org.gnome.Usage.desktop', 'vinagre.desktop']
+categories=['X-GNOME-Utilities']
+name='X-GNOME-Utilities.directory'
+translate=true
+
+[org/gnome/desktop/app-folders/folders/YaST]
+categories=['X-SuSE-YaST']
+name='suse-yast.directory'
+translate=true
+
+[org/gnome/desktop/background]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/stylish/.local/share/backgrounds/2022-10-01-23-34-18-39005352134_e8a1b99ec4_o.jpg'
+picture-uri-dark='file:///home/stylish/.local/share/backgrounds/2022-10-01-23-34-18-39005352134_e8a1b99ec4_o.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/input-sources]
+sources=[('xkb', 'br')]
+xkb-options=@as []
+
+[org/gnome/desktop/interface]
+color-scheme='prefer-dark'
+document-font-name='Ubuntu 11'
+enable-hot-corners=false
+font-antialiasing='rgba'
+font-hinting='slight'
+font-name='Ubuntu 11'
+gtk-theme='Flat-Remix-GTK-Blue-Darkest'
+icon-theme='Flat-Remix-Blue-Dark'
+monospace-font-name='Hack 10'
+toolkit-accessibility=false
+
+[org/gnome/desktop/notifications]
+application-children=['gnome-power-panel', 'org-gnome-nautilus', 'firefox', 'org-gnome-terminal', 'ca-desrt-dconf-editor', 'org-gnome-settings', 'discord']
+
+[org/gnome/desktop/notifications/application/ca-desrt-dconf-editor]
+application-id='ca.desrt.dconf-editor.desktop'
+
+[org/gnome/desktop/notifications/application/discord]
+application-id='discord.desktop'
+
+[org/gnome/desktop/notifications/application/firefox]
+application-id='firefox.desktop'
+
+[org/gnome/desktop/notifications/application/gnome-power-panel]
+application-id='gnome-power-panel.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-nautilus]
+application-id='org.gnome.Nautilus.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-settings]
+application-id='org.gnome.Settings.desktop'
+
+[org/gnome/desktop/notifications/application/org-gnome-terminal]
+application-id='org.gnome.Terminal.desktop'
+
+[org/gnome/desktop/peripherals/touchpad]
+two-finger-scrolling-enabled=true
+
+[org/gnome/desktop/screensaver]
+color-shading-type='solid'
+picture-options='zoom'
+picture-uri='file:///home/stylish/.local/share/backgrounds/2022-10-01-23-34-18-39005352134_e8a1b99ec4_o.jpg'
+primary-color='#000000000000'
+secondary-color='#000000000000'
+
+[org/gnome/desktop/search-providers]
+disable-external=false
+disabled=['org.gnome.Nautilus.desktop', 'org.gnome.Terminal.desktop']
+sort-order=['org.gnome.Contacts.desktop', 'org.gnome.Documents.desktop', 'org.gnome.Nautilus.desktop']
+
+[org/gnome/desktop/wm/keybindings]
+close=['<Super>q', '<Alt>F4']
+maximize=@as []
+minimize=['<Super>comma']
+move-to-monitor-down=@as []
+move-to-monitor-left=@as []
+move-to-monitor-right=@as []
+move-to-monitor-up=@as []
+move-to-workspace-down=@as []
+move-to-workspace-left=['<Alt><Super>j']
+move-to-workspace-right=['<Alt><Super>k']
+move-to-workspace-up=@as []
+switch-to-workspace-down=@as []
+switch-to-workspace-left=['<Control><Super>j']
+switch-to-workspace-right=['<Control><Super>k']
+switch-to-workspace-up=@as []
+toggle-maximized=['<Super>m']
+unmaximize=@as []
+
+[org/gnome/desktop/wm/preferences]
+button-layout='appmenu:minimize,maximize,close'
+num-workspaces=6
+titlebar-font='Ubuntu 11'
+
+[org/gnome/mutter]
+center-new-windows=true
+dynamic-workspaces=false
+edge-tiling=false
+overlay-key='Super_L'
+workspaces-only-on-primary=false
+
+[org/gnome/mutter/keybindings]
+toggle-tiled-left=@as []
+toggle-tiled-right=@as []
+
+[org/gnome/mutter/wayland/keybindings]
+restore-shortcuts=@as []
+
+[org/gnome/nautilus/icon-view]
+default-zoom-level='standard'
+
+[org/gnome/nautilus/preferences]
+default-folder-viewer='icon-view'
+search-filter-time-type='last_modified'
+
+[org/gnome/nautilus/window-state]
+initial-size=(671, 752)
+maximized=false
+
+[org/gnome/settings-daemon/plugins/media-keys]
+custom-keybindings=['/org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0/']
+email=['<Super>e']
+home=['<Super>f']
+rotate-video-lock-static=@as []
+screensaver=['<Super>Escape']
+terminal=['<Super>t']
+www=['<Super>b']
+
+[org/gnome/settings-daemon/plugins/media-keys/custom-keybindings/custom0]
+binding='<Super>slash'
+command='gnome-terminal --window'
+name='Gnome Terminal'
+
+[org/gnome/shell]
+command-history=['r', 'chromium']
+disable-user-extensions=false
+disabled-extensions=['gnome-ui-tune@itstime.tech', 'windowsNavigator@gnome-shell-extensions.gcampax.github.com', 'window-list@gnome-shell-extensions.gcampax.github.com', 'screenshot-window-sizer@gnome-shell-extensions.gcampax.github.com', 'workspace-indicator@gnome-shell-extensions.gcampax.github.com', 'apps-menu@gnome-shell-extensions.gcampax.github.com']
+enabled-extensions=['appindicatorsupport@rgcjonas.gmail.com', 'pop-shell@system76.com', 'user-theme@gnome-shell-extensions.gcampax.github.com', 'native-window-placement@gnome-shell-extensions.gcampax.github.com', 'blur-my-shell@aunetx', 'Vitals@CoreCoding.com', 'dash-to-panel@jderose9.github.com', 'places-menu@gnome-shell-extensions.gcampax.github.com', 'drive-menu@gnome-shell-extensions.gcampax.github.com', 'Hide_Activities@shay.shayel.org', 'impatience@gfxmonk.net', 'scroll-workspaces@gfxmonk.net', 'todo.txt@bart.libert.gmail.com', 'dash2dock-lite@icedman.github.com', 'no-overview@fthx', 'todolist@tomMoral.org', 'simply.workspaces@andyrichardson.dev']
+favorite-apps=@as []
+welcome-dialog-last-shown-version='42.5'
+
+[org/gnome/shell/extensions/TodoTxt]
+donetxt-location='/home/stylish/.local/share/todo.txt/done.txt'
+open-key=['<Control><Alt>t']
+todotxt-location='/home/stylish/.local/share/todo.txt/todo.txt'
+
+[org/gnome/shell/extensions/arcmenu]
+enable-standlone-runner-menu=false
+menu-background-color='rgba(48,48,49,0.98)'
+menu-border-color='rgb(60,60,60)'
+menu-button-appearance='Icon'
+menu-foreground-color='rgb(223,223,223)'
+menu-item-active-bg-color='rgb(25,98,163)'
+menu-item-active-fg-color='rgb(255,255,255)'
+menu-item-hover-bg-color='rgb(21,83,158)'
+menu-item-hover-fg-color='rgb(255,255,255)'
+menu-separator-color='rgba(255,255,255,0.1)'
+pinned-app-list=['Chromium', '', 'chromium.desktop', 'Files', '', 'org.gnome.Nautilus.desktop', 'Terminal', '', 'org.gnome.Terminal.desktop', 'ArcMenu Settings', 'ArcMenu_ArcMenuIcon', 'gnome-extensions prefs arcmenu@arcmenu.com']
+prefs-visible-page=0
+runner-menu-hotkey='Custom'
+toggle-runner-menu=['<Super>space']
+
+[org/gnome/shell/extensions/blur-my-shell]
+sigma=30
+
+[org/gnome/shell/extensions/dash-to-panel]
+animate-appicon-hover-animation-extent={'RIPPLE': 4, 'PLANK': 4, 'SIMPLE': 1}
+appicon-margin=4
+appicon-padding=4
+available-monitors=[1, 0]
+dot-position='TOP'
+hotkeys-overlay-combo='TEMPORARILY'
+intellihide=false
+leftbox-padding=-1
+multi-monitors=true
+panel-anchors='{"0":"MIDDLE","1":"MIDDLE"}'
+panel-element-positions='{"0":[{"element":"showAppsButton","visible":false,"position":"stackedBR"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":false,"position":"stackedBR"},{"element":"rightBox","visible":false,"position":"stackedBR"},{"element":"dateMenu","visible":false,"position":"stackedBR"},{"element":"systemMenu","visible":false,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}],"1":[{"element":"showAppsButton","visible":false,"position":"stackedBR"},{"element":"activitiesButton","visible":false,"position":"stackedTL"},{"element":"leftBox","visible":false,"position":"stackedTL"},{"element":"taskbar","visible":true,"position":"stackedTL"},{"element":"centerBox","visible":false,"position":"stackedBR"},{"element":"rightBox","visible":false,"position":"stackedBR"},{"element":"dateMenu","visible":false,"position":"stackedBR"},{"element":"systemMenu","visible":false,"position":"stackedBR"},{"element":"desktopButton","visible":false,"position":"stackedBR"}]}'
+panel-lengths='{"0":40,"1":40}'
+panel-positions='{"0":"BOTTOM","1":"BOTTOM"}'
+panel-sizes='{"0":48,"1":48}'
+primary-monitor=1
+status-icon-padding=-1
+stockgs-keep-top-panel=true
+trans-panel-opacity=0.050000000000000003
+trans-use-custom-opacity=true
+tray-padding=-1
+window-preview-title-position='TOP'
+
+[org/gnome/shell/extensions/dash2dock-lite]
+animate-icons=true
+background-dark=true
+background-opacity=0.47073170721707314
+pressure-sense=true
+scale-icons=0.0
+shrink-icons=true
+translucent-topbar=false
+
+[org/gnome/shell/extensions/net/gfxmonk/scroll-workspaces]
+indicator=false
+
+[org/gnome/shell/extensions/pop-shell]
+activate-launcher=['<Super>space']
+active-hint=true
+active-hint-border-radius=uint32 5
+gap-inner=uint32 2
+gap-outer=uint32 2
+hint-color-rgba='rgb(164,158,150)'
+show-title=true
+smart-gaps=false
+tile-by-default=true
+
+[org/gnome/shell/extensions/user-theme]
+name='Flat-Remix-Blue-Darkest-fullPanel'
+
+[org/gnome/shell/extensions/vitals]
+fixed-widths=true
+hide-icons=false
+hide-zeros=false
+show-battery=true
+show-fan=true
+show-memory=true
+show-network=true
+show-processor=true
+show-storage=true
+show-system=true
+show-temperature=true
+show-voltage=true
+use-higher-precision=false
+
+[org/gnome/shell/keybindings]
+open-application-menu=@as []
+toggle-message-tray=['<Super>v']
+toggle-overview=@as []
+
+[org/gnome/terminal/legacy/profiles:]
+default='e1c9976c-f19d-4d40-bad3-27e4c064874a'
+list=['b1dcc9dd-5262-4d8d-a863-c897e6d979b9', 'e1c9976c-f19d-4d40-bad3-27e4c064874a']
+
+[org/gnome/terminal/legacy/profiles:/:e1c9976c-f19d-4d40-bad3-27e4c064874a]
+audible-bell=false
+background-color='rgb(23,20,33)'
+bold-is-bright=true
+foreground-color='rgb(208,207,204)'
+palette=['rgb(23,20,33)', 'rgb(192,28,40)', 'rgb(38,162,105)', 'rgb(162,115,76)', 'rgb(18,72,139)', 'rgb(163,71,186)', 'rgb(42,161,179)', 'rgb(208,207,204)', 'rgb(94,92,100)', 'rgb(246,97,81)', 'rgb(51,209,122)', 'rgb(233,173,12)', 'rgb(42,123,222)', 'rgb(192,97,203)', 'rgb(51,199,222)', 'rgb(255,255,255)']
+use-theme-colors=false
+visible-name='New'
+
+[org/gnome/tweaks]
+show-extensions-notice=false
+
+[org/gtk/gtk4/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=170
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-size=(887, 374)
+
+[org/gtk/settings/color-chooser]
+custom-colors=[(0.64333333333333342, 0.61793859649122818, 0.58972222222222237, 1.0), (0.83137254901960789, 0.79607843137254897, 0.75686274509803919, 1.0), (0.83000000000000007, 0.79500069930069939, 0.75530000000000008, 1.0), (0.98431372549019602, 0.72156862745098038, 0.42352941176470588, 1.0)]
+selected-color=(true, 0.64333333333333342, 0.61793859649122818, 0.58972222222222237, 1.0)
+
+[org/gtk/settings/file-chooser]
+date-format='regular'
+location-mode='path-bar'
+show-hidden=false
+show-size-column=true
+show-type-column=true
+sidebar-width=165
+sort-column='name'
+sort-directories-first=false
+sort-order='ascending'
+type-format='category'
+window-position=(1563, 71)
+window-size=(1051, 566)
+
+[system/proxy]
+mode='none'

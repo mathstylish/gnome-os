@@ -1,0 +1,45 @@
+#!/bin/sh
+
+# use lunarvim/neovim from vim if present
+if [[ -x "$(command -v lvim)" ]]; then
+  alias vim='lvim'
+  alias vimdiff='lvim -d'
+elif [[ -x "$(command -v nvim)" ]]; then
+  alias vim='nvim'
+  alias vimdiff='nvim -d'
+fi
+
+#[ -x "$(command -v nvim)" ] && alias vim='nvim' vimdiff='nvim -d'
+
+# sudo not required for some system commands
+for command in mount umount sv pacman updatedb su shutdown poweroff reboot systemctl ; do
+  alias $command="sudo $command"
+done; unset command
+
+# Colorize commands when possible.
+alias \
+	ls="ls -hN --color=auto --group-directories-first" \
+	grep="grep --color=auto" \
+	diff="diff --color=auto" \
+	ccat="highlight --out-format=ansi" \
+	ip="ip -color=auto"
+
+alias rmd='rm -rf'                                                  # delete dir
+alias psmem='ps auxf | sort -nr -k 4 | head -5'                     # get top process eating memory
+alias pscpu='ps auxf | sort -nr -k 3 | head -5'                     # get top process eating cpu
+alias list_systemctl='systemctl list-unit-files --state=enabled'    # list enabled services
+alias tmp='cd /tmp'                                                 # go to /tmp quickly
+alias dws='cd $HOME/Development'
+alias zed='vim $ZDOTDIR/.zshrc'                                     # edit .zshrc quickly
+alias zea='vim $ZDOTDIR/aliases'
+alias zre='source $ZDOTDIR/.zshrc'                                  # source .zshrc quickly
+alias ked='vim $XDG_CONFIG_HOME/kitty/kitty.conf'
+alias led='vim $XDG_CONFIG_HOME/lvim/config.lua'
+alias pip='python -m pip'                                           # install python modules correctly
+alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'           # XDG BASE DIRECTORY wget
+alias clear="printf '\033[2J\033[3J\033[1;1H'"                      # clear with no scrollback
+alias locate='plocate --ignore-case'
+alias cpd='pwd | xclip -sel clip'
+alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
+alias lg='lazygit'
+cpf() { cat $1 | xclip -sel clip  }                                 # content file to clipboard
