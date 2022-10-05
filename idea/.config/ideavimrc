@@ -1,0 +1,99 @@
+"" Common settings -------------------------
+"" let you copy paste from the system and Intellij clipboards.
+set clipboard+=unnamed
+set clipboard+=ideaput
+"" keeps few lines visible when scrolling.
+set scrolloff=5
+"" highlights the search string while typing.
+set incsearch
+"" disable bell sound
+set visualbell
+set noerrorbells
+"" shows both the line number and the relative line number in the gutter.
+set number relativenumber
+"" leader key
+let mapleader = " "
+"" i hate esc
+imap jk <Esc>
+imap kj <Esc>
+"" save
+nnoremap <leader>w :action SaveAll<CR>
+"" Terminal
+nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
+nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
+"" close buffer
+nnoremap <leader>c :action CloseContent<CR>
+nnoremap <leader>bc :action CloseAllEditors<CR>
+"" split
+nnoremap <leader>vs :action SplitVertically<CR>
+nnoremap <leader>hs :action SplitHorizontally<CR>
+"" split navigation
+sethandler <c-h> a:vim
+sethandler <c-l> a:vim
+sethandler <c-j> a:vim
+sethandler <c-k> a:vim
+nnoremap <c-h> <c-w>h
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-k> <c-w>k
+"" move lines
+"up"
+inoremap <A-k> :action MoveStatementUp<CR>
+nnoremap <A-k> :action MoveStatementUp<CR>
+vnoremap <A-k> :action MoveStatementUp<CR>
+"down"
+inoremap <A-j> :action MoveStatementDown<CR>
+nnoremap <A-j> :action MoveStatementDown<CR>
+vnoremap <A-j> :action MoveStatementDown<CR>
+"" tab navigation
+nnoremap <s-J> :action PreviousTab<CR>
+nnoremap <s-K> :action NextTab<CR>
+""" Editing source code
+set ideajoin
+set idearefactormode=keep
+"" Indent
+vnoremap < <gv
+vnoremap > >gv
+"" Jump into methods declarations
+nnoremap [[ :action MethodUp<CR>
+nnoremap ]] :action MethodDown<CR>
+"" Folding
+nnoremap zc :action CollapseRegion<CR>
+nnoremap zo :action ExpandRegion<CR>
+nnoremap <leader>zc :action CollapseAllRegions<CR>
+nnoremap <leader>zo :action ExpandAllRegions<CR>
+"" Comment
+nnoremap <leader>/ :action CommentByLineComment<CR>
+"" Editing source code
+nnoremap <leader>lr :action Refactorings.QuickListPopupAction<CR>
+vnoremap <leader>lr :action Refactorings.QuickListPopupAction<CR>
+nnoremap <Leader>lf  :action ReformatCode<CR>
+nnoremap <leader>lo :action OptimizeImports<CR>
+nnoremap <c-r> :action RecentFiles<CR>
+nnoremap <leader>sl :action RecentLocations<CR>
+nnoremap <leader>sh  :action LocalHistory.ShowHistory<CR>
+"" Errors
+nnoremap ge :action GotoNextError<CR>
+nnoremap gE :action GotoPreviousError<CR>
+"" Source code navigation
+"" Live grep
+nnoremap <leader>st :action FindInPath<CR>
+nnoremap <c-a> :action GotoAction<CR>
+"" Find files
+nnoremap <leader>sf :action GotoFile<CR>
+nnoremap <leader>su :action FindUsages<CR>
+nnoremap <c-s> :action FileStructurePopup<CR>
+nnoremap <c-o> :action GotoSymbol<CR>
+nnoremap gc :action GotoClass<CR>
+nnoremap gi :action GotoImplementation<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap gp :action GotoSuperMethod<CR>
+nnoremap gt :action GotoTest<CR>
+nnoremap gb :action Back<CR>
+nnoremap gf :action Forward<CR>
+"" Put semicolon end of line
+nnoremap <leader>kj <Esc>A;
+"" Create function structure and go to body
+nnoremap <leader>nn <Esc>A(<Esc>A {<CR>
+"" Create function structure and go to put parameters
+nnoremap <leader>mm <Esc>A(<Esc>A {<CR><Esc>kf(a
