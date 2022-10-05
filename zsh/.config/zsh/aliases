@@ -42,7 +42,13 @@ alias locate='plocate --ignore-case'
 alias cpd='pwd | xclip -sel clip'
 alias yarn='yarn --use-yarnrc "$XDG_CONFIG_HOME/yarn/config"'
 alias lg='lazygit'
+alias gs='git status'
+alias gl='git log'
+alias glo='git log --oneline'
+alias gp='git push'
+alias gpu='git push -u origin main'
+
 cpf() { cat $1 | xclip -sel clip  }                                 # content file to clipboard
-cgu() {
+cgu() {                                                             # change my ssh identity key if i need to push to other git account
   ln -sf $HOME/.ssh/$1 $HOME/.ssh/current
 }
