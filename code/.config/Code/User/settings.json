@@ -1,0 +1,526 @@
+{
+  // Editor
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.cursorBlinking": "smooth",
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "editor.fontFamily": "Fira Code",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 13.5,
+  "editor.lineNumbers": "relative",
+  "editor.linkedEditing": true,
+  "editor.minimap.enabled": false,
+  "editor.renderLineHighlight": "gutter",
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.semanticHighlighting.enabled": true,
+  "editor.tabSize": 2,
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 80,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  // Explorer
+  "explorer.compactFolders": false,
+  "explorer.confirmDelete": false,
+  // Files
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 500,
+  "files.eol": "\n",
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/*.o": true,
+    "**.o": true,
+    "**/*.out": true,
+    "**.out": true,
+    "**/*.class": true,
+    "**.class": true,
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.associations": {
+    ".sequelizerc": "javascript",
+    ".stylelintrc": "json",
+    "*.tsx": "typescriptreact",
+    ".env.*": "dotenv",
+    ".prettierrc": "json"
+  },
+  "workbench.editor.labelFormat": "short",
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "none",
+  // Window
+  "window.menuBarVisibility": "toggle",
+  // Extension
+  "extensions.ignoreRecommendations": true,
+  // Terminal
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+  },
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.splitCwd": "workspaceRoot",
+  // Security
+  "security.workspace.trust.enabled": false,
+  // Language
+  // Rules
+  "[java]": {
+    "editor.tabSize": 4,
+  },
+  "[json]": {
+    "editor.formatOnSave": true
+  },
+  "[c]": {
+    "editor.tabSize": 4,
+    "files.encoding": "windows1252",
+  },
+  "[python]": {
+    "editor.tabSize": 4
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+  },
+  "emmet.syntaxProfiles": {
+    "javascript": "tsx"
+  },
+  // Options 
+  // js
+  "javascript.suggest.autoImports": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  // ts
+  "typescript.tsserver.log": "off",
+  "typescript.suggest.autoImports": true,
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  // Vim
+  "vim.easymotion": true,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "nvim",
+  "vim.incsearch": true,
+  "vim.leader": "<space>",
+  "vim.hlsearch": true,
+  "vim.sneak": true,
+  "vim.useCtrlKeys": true,
+  "vim.useSystemClipboard": true,
+  "vim.highlightedyank.enable": true,
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<leader>",
+        "e"
+      ],
+      "commands": [
+        "workbench.view.explorer"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        ";"
+      ],
+      "commands": [
+        "workbench.action.showCommands"
+      ],
+      "silent": true
+    },
+    // Buffers 
+    {
+      "before": [
+        "L"
+      ],
+      "commands": [
+        "workbench.action.nextEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "H"
+      ],
+      "commands": [
+        "workbench.action.previousEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "w"
+      ],
+      "commands": [
+        "workbench.action.files.save"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "v",
+        "s"
+      ],
+      "commands": [
+        "workbench.action.splitEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "v",
+        "h"
+      ],
+      "commands": [
+        "workbench.action.splitEditorOrthogonal"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "/"
+      ],
+      "commands": [
+        "editor.action.commentLine"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "c"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "q"
+      ],
+      "commands": [
+        "workbench.action.closeActiveEditor"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "C"
+      ],
+      "commands": [
+        "workbench.action.closeAllEditors"
+      ],
+      "silent": true
+    },
+    // Search
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "f"
+      ],
+      "commands": [
+        "workbench.action.quickOpen"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "f",
+        "t"
+      ],
+      "commands": [
+        "workbench.action.findInFiles"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "s",
+        "r"
+      ],
+      "commands": [
+        "vim-search-and-replace.start"
+      ],
+      "silent": true
+    },
+    // LSP
+    {
+      "before": [
+        "g",
+        "d"
+      ],
+      "commands": [
+        "editor.action.revealDefinition"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "D"
+      ],
+      "commands": [
+        "editor.action.revealDeclaration"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "I"
+      ],
+      "commands": [
+        "editor.action.goToImplementation"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "r"
+      ],
+      "commands": [
+        "editor.action.goToReferences"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "l"
+      ],
+      "commands": [
+        "editor.action.marker.nextInFiles"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "p"
+      ],
+      "commands": [
+        "editor.action.peekDefinition"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "g",
+        "s"
+      ],
+      "commands": [
+        "editor.action.triggerParameterHints"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "K"
+      ],
+      "commands": [
+        "editor.action.showHover"
+      ],
+      "silent": true
+    },
+    // better db
+    {
+      "before": [
+        "d",
+        "b"
+      ],
+      "after": [
+        "v",
+        "b",
+        "\"",
+        "_",
+        "d"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "h"
+      ],
+      "commands": [
+        ":nohl"
+      ]
+    },
+    {
+      "before": [
+        "<leader>",
+        "n"
+      ],
+      "commands": [
+        "extension.advancedNewFile"
+      ]
+    },
+  ],
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "<"
+      ],
+      "after": [
+        "<",
+        "g",
+        "v"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        ">"
+      ],
+      "after": [
+        ">",
+        "g",
+        "v"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "s",
+        "r"
+      ],
+      "commands": [
+        "vim-search-and-replace.start"
+      ],
+      "silent": true
+    },
+    {
+      "before": [
+        "<leader>",
+        "/"
+      ],
+      "commands": [
+        "editor.action.blockComment"
+      ],
+      "silent": true
+    },
+  ],
+  "vim.insertModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        "k",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    },
+  ],
+  "vim.handleKeys": {
+    "<C-b>": false,
+    "<C-e>": false,
+    "<C-f>": false,
+    "<C-v>": false,
+    "<C-z>": false,
+    "<C-y>": false,
+    "<C-c>": false,
+    "<C-t>": false,
+  },
+  // End Vim
+  // Extensions 
+  // css rem
+  "cssrem.hover": "always",
+  "cssrem.vw": true,
+  "cssrem.fixedDigits": 3,
+  "cssrem.rootFontSize": 24,
+  // Material Theme
+  "material-icon-theme.activeIconPack": "nest",
+  "material-icon-theme.folders.associations": {
+    "infra": "app",
+    "entities": "class",
+    "domain": "class",
+    "schemas": "class",
+    "typeorm": "database",
+    "repositories": "mappings",
+    "http": "container",
+    "migrations": "tools",
+    "modules": "components",
+    "implementations": "core",
+    "dtos": "typescript",
+    "fakes": "mock",
+    "websockets": "pipe",
+    "protos": "pipe",
+    "grpc": "pipe",
+    "providers": "include",
+    "subscribers": "messages",
+    "useCases": "controller",
+    "kafka": "scripts",
+    "mappers": "meta",
+    "_shared": "shared",
+    "eslint-config": "tools",
+    "kube": "kubernetes"
+  },
+  "material-icon-theme.languages.associations": {
+    "dotenv": "tune"
+  },
+  "material-icon-theme.files.associations": {
+    "ormconfig.json": "database",
+    "tsconfig.json": "tune",
+    "*.proto": "3d",
+    "*.webpack.js": "webpack"
+  },
+  "workbench.productIconTheme": "fluent-icons",
+  // Advanced new file
+  "advancedNewFile.exclude": {
+    "node_modules": true,
+    "dist": true,
+    "dev": true,
+    ".vscode": true,
+    ".git": true
+  },
+  "advancedNewFile.convenienceOptions": [
+    "last",
+    "current",
+    "root"
+  ],
+  "explorer.confirmDragAndDrop": false,
+  "workbench.colorTheme": "Tokyo Night",
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features"
+  },
+  "editor.tokenColorCustomizations": {
+    "[Tokyo Night]": { // or "[Tokyo Night Storm]"
+      "textMateRules": [
+        {
+          "scope": [
+            "comment",
+            "meta.var.expr storage.type",
+            "keyword.control.flow",
+            "keyword.control.return",
+            "meta.directive.vue punctuation.separator.key-value.html",
+            "meta.directive.vue entity.other.attribute-name.html",
+            "tag.decorator.js entity.name.tag.js",
+            "tag.decorator.js punctuation.definition.tag.js",
+            "storage.modifier"
+          ],
+          "settings": {
+            "fontStyle": ""
+          }
+        }
+      ]
+    }
+  },
+  "breadcrumbs.enabled": false
+}
