@@ -47,6 +47,7 @@ alias gl='git log'
 alias glo='git log --oneline'
 alias gp='git push'
 alias gpu='git push -u origin main'
+alias totext="xxd -r -p && echo ''"                                 # -r hex to ascii, -p to plain text
 
 cpf() { cat $1 | xclip -sel clip  }                                 # content file to clipboard
 cgu() {                                                             # change my ssh identity key if i need to push to other git account
