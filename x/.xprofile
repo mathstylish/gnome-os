@@ -9,6 +9,9 @@ export PATH=/home/stylish/.local/bin:$PATH
 # global npm binaries
 export PATH=/home/stylish/.local/share/npm/bin:$PATH
 
+export EDITOR=vim
+export BROWSER=firefox
+
 export ZDOTDIR=$XDG_CONFIG_HOME/zsh                       # zsh config dir
 export LESSHISTFILE=-                                     # disable files
 export GTK2_RC_FILES=$XDG_CONFIG_HOME/gtk-2.0/gtkrc       # gtk2
