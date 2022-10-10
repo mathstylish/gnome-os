@@ -103,7 +103,7 @@
   // Vim
   "vim.easymotion": true,
   "vim.enableNeovim": true,
-  "vim.neovimPath": "nvim",
+  "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.incsearch": true,
   "vim.leader": "<space>",
   "vim.hlsearch": true,
@@ -112,16 +112,6 @@
   "vim.useSystemClipboard": true,
   "vim.highlightedyank.enable": true,
   "vim.normalModeKeyBindingsNonRecursive": [
-    {
-      "before": [
-        "<leader>",
-        "e"
-      ],
-      "commands": [
-        "workbench.view.explorer"
-      ],
-      "silent": true
-    },
     {
       "before": [
         "<leader>",
@@ -197,15 +187,6 @@
       "before": [
         "<leader>",
         "c"
-      ],
-      "commands": [
-        "workbench.action.closeActiveEditor"
-      ],
-      "silent": true
-    },
-    {
-      "before": [
-        "q"
       ],
       "commands": [
         "workbench.action.closeActiveEditor"
@@ -368,6 +349,16 @@
         "extension.advancedNewFile"
       ]
     },
+    {
+      "before": [
+        "<leader>",
+        "g",
+        "g"
+      ],
+      "commands": [
+        "workbench.action.tasks.runTask"
+      ]
+    }
   ],
   "vim.visualModeKeyBindingsNonRecursive": [
     {
@@ -522,5 +513,5 @@
       ]
     }
   },
-  "breadcrumbs.enabled": false
+  "breadcrumbs.enabled": false,
 }
