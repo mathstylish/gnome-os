@@ -2,22 +2,24 @@
 [
   // Explorer
   {
-    "key": "ctrl+e",
-    "command": "workbench.view.explorer"
+    "key": "shift+space",
+    "command": "workbench.view.explorer",
+    "when": "vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
-      "key": "ctrl+e",
-      "command": "-workbench.view.explorer"
+      "key": "shift+space",
+      "command": "-workbench.view.explorer",
+      "when": "vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
-      "key": "ctrl+e",
+      "key": "shift+space",
       "command": "workbench.action.toggleSidebarVisibility",
-      "when": "explorerViewletVisible && sideBarFocus"
+      "when": "explorerViewletVisible && sideBarFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
-      "key": "ctrl+e",
+      "key": "shift+space",
       "command": "-workbench.action.toggleSidebarVisibility",
-      "when": "explorerViewletVisible"
+      "when": "explorerViewletVisible && vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
     "key": "r",
