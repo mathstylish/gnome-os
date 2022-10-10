@@ -46,6 +46,7 @@ alias gs='git status'
 alias gl='git log'
 alias glo='git log --oneline'
 alias gp='git push'
+alias gc='git clone'
 alias gpu='git push -u origin main'
 alias totext="xxd -r -p && echo ''"                                 # -r hex to ascii, -p to plain text
 
