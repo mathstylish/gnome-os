@@ -1,26 +1,32 @@
 // Place your key bindings in this file to override the defaults
 [
-  // Explorer
+  // Open explorer 
   {
     "key": "shift+space",
     "command": "workbench.view.explorer",
     "when": "vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
-      "key": "shift+space",
-      "command": "-workbench.view.explorer",
-      "when": "vim.mode == 'Normal' || vim.mode == 'Visual'"
+    "key": "shift+space",
+    "command": "-workbench.view.explorer",
+    "when": "vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
-      "key": "shift+space",
-      "command": "workbench.action.toggleSidebarVisibility",
-      "when": "explorerViewletVisible && sideBarFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    "key": "shift+space",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletVisible && sideBarFocus && vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
   {
-      "key": "shift+space",
-      "command": "-workbench.action.toggleSidebarVisibility",
-      "when": "explorerViewletVisible && vim.mode == 'Normal' || vim.mode == 'Visual'"
+    "key": "shift+space",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "explorerViewletVisible && vim.mode == 'Normal' || vim.mode == 'Visual'"
   },
+  {
+    "key": "ctrl+e",
+    "command": "-workbench.action.quickOpen"
+  },
+
+  // Explorer navigation
   {
     "key": "r",
     "command": "renameFile",
@@ -65,26 +71,28 @@
     "key": "shift+a",
     "command": "explorer.newFolder",
     "when": "filesExplorerFocus && !inputFocus"
-  }, 
+  },
+
   // GIT
   {
     "key": "ctrl+g",
     "command": "workbench.view.scm"
   },
   {
-      "key": "ctrl+g",
-      "command": "-workbench.view.scm"
+    "key": "ctrl+g",
+    "command": "-workbench.view.scm"
   },
   {
-      "key": "ctrl+g",
-      "command": "workbench.action.toggleSidebarVisibility",
-      "when": "view.workbench.scm.visible && sideBarFocus"
+    "key": "ctrl+g",
+    "command": "workbench.action.toggleSidebarVisibility",
+    "when": "view.workbench.scm.visible && sideBarFocus"
   },
   {
-      "key": "ctrl+g",
-      "command": "-workbench.action.toggleSidebarVisibility",
-      "when": "view.workbench.scm.visible"
+    "key": "ctrl+g",
+    "command": "-workbench.action.toggleSidebarVisibility",
+    "when": "view.workbench.scm.visible"
   },
+
   // QUICK OPEN (<leader>ff or ctrl + p)
   {
     "key": "ctrl+j",
@@ -96,22 +104,14 @@
     "command": "workbench.action.quickOpenNavigatePrevious",
     "when": "inQuickOpen"
   },
+
   // EDITOR
   {
     "key": "ctrl+l",
-    "when": "sideBarFocus",
-    "command": "workbench.action.focusActiveEditorGroup"
-  },
-  {
-    "key": "ctrl+k",
     "command": "workbench.action.focusActiveEditorGroup",
-    "when": "terminalFocus"
+    "when": "sideBarFocus"
   },
   {
-    "key": "ctrl+h",
-    "command": "workbench.action.focusSideBar",
-  },
-    {
     "key": "alt+j",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus && !editorReadonly"
@@ -152,10 +152,6 @@
     "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
   },
   {
-    "key": "alt+o",
-    "command": "workbench.action.navigateBack"
-  },
-  {
     "key": "ctrl+alt+j",
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus && vim.mode == 'Insert'"
@@ -170,10 +166,6 @@
     "command": "-workbench.action.togglePanel"
   },
   {
-    "key": "alt+oem_102",
-    "command": "toggleVim"
-  },
-  {
     "key": "q",
     "command": "closeReferenceSearch",
     "when": "referenceSearchVisible && !config.editor.stablePeek"
@@ -182,6 +174,107 @@
     "key": "q",
     "command": "closeMarkersNavigation",
     "when": "markersNavigationVisible && !config.editor.stablePeek"
+  },
+
+  // SEARCH (AND REPLACE)
+  {
+    "key": "ctrl+k",
+    "command": "search.focus.previousInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible && !searchInputBoxFocus"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "search.focus.nextInputBox",
+    "when": "inSearchEditor && inputBoxFocus || inputBoxFocus && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+d",
+    "command": "workbench.action.search.toggleQueryDetails",
+    "when": "inSearchEditor || searchViewletFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "search.action.focusSearchFromResults",
+    "when": "firstMatchFocus && searchViewletVisible"
+  },
+  {
+    "key": "shift+r",
+    "command": "search.action.replace",
+    "when": "matchFocus && replaceActive && searchViewletVisible"
+  },
+  {
+    "key": "shift+r",
+    "command": "search.action.replaceAllInFile",
+    "when": "fileMatchFocus && replaceActive && searchViewletVisible"
+  },
+  {
+    "key": "ctrl+shift+a",
+    "command": "search.action.replaceAll",
+    "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
+  },
+
+  // EDITOR SEARCH (AND REPLACE)
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.nextMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "enter",
+    "command": "editor.action.replaceAll",
+    "when": "editorFocus && findWidgetVisible && replaceInputFocussed"
+  },
+  {
+    "key": "enter",
+    "command": "-editor.action.nextMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "shift+enter",
+    "command": "-editor.action.previousMatchFindAction",
+    "when": "editorFocus && findInputFocussed"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "closeFindWidget",
+    "when": "editorFocus && findWidgetVisible && !isComposing"
+  },
+
+  // MARKERS (PROBLEMS) 
+  {
+    "key": "ctrl+k",
+    "command": "editor.action.marker.prev",
+    "when": "markersNavigationVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "editor.action.marker.next",
+    "when": "markersNavigationVisible && !config.editor.stablePeek"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "list.focusUp",
+    "when": "focusedView == 'workbench.panel.markers.view'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "list.focusDown",
+    "when": "focusedView == 'workbench.panel.markers.view'"
+  },
+  {
+    "key": "ctrl+j",
+    "command": "problems.action.focusProblemsFromFilter",
+    "when": "problemsFilterFocus"
+  },
+  {
+    "key": "ctrl+c",
+    "command": "workbench.action.closePanel",
+    "when": "focusedView == 'workbench.panel.markers.view'"
   },
   // TERMINAL
   {
@@ -198,8 +291,18 @@
     "command": "workbench.action.terminal.kill",
     "when": "terminal.active"
   },
+  // VIM
   {
-    "key": "shift+alt+oem_7",
-    "command": "workbench.action.quickOpenTerm"
+    "key": "alt+\\",
+    "command": "toggleVim"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+alt+i",
+    "command": "toggleSuggestionFocus",
+    "when": "suggestWidgetVisible && textInputFocus"
   }
 ]
