@@ -46,11 +46,26 @@ alias gs='git status'
 alias gl='git log'
 alias glo='git log --oneline'
 alias gp='git push'
-alias gc='git clone'
 alias gpu='git push -u origin main'
 alias totext="xxd -r -p && echo ''"                                 # -r hex to ascii, -p to plain text
 
 cpf() { cat $1 | xclip -sel clip  }                                 # content file to clipboard
 cgu() {                                                             # change my ssh identity key if i need to push to other git account
   ln -sf $HOME/.ssh/$1 $HOME/.ssh/current
+}
+gc() {
+  PROTOCOL=$1
+  USER_REPO=$2
+
+  if [[ -z "$PROTOCOL" ]]; then
+    echo "gc <protocol> <username/repo>"
+  fi
+
+  if [ "$PROTOCOL" = "ssh" ]; then
+    git clone "git@github.com:$2.git"
+  fi
+
+  if [ "$PROTOCOL" = "https" ]; then
+    git clone "https://github.com/$2.git"
+  fi
 }
