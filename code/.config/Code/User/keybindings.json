@@ -168,12 +168,12 @@
     "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
   },
   {
-    "key": "ctrl+alt+j",
+    "key": "shift+alt+k",
     "command": "editor.action.insertCursorAbove",
     "when": "editorTextFocus && vim.mode == 'Insert'"
   },
   {
-    "key": "ctrl+alt+k",
+    "key": "shift+alt+j",
     "command": "editor.action.insertCursorBelow",
     "when": "editorTextFocus && vim.mode == 'Insert'"
   },
