@@ -118,6 +118,7 @@
   // Vim
   "vim.easymotion": true,
   "vim.enableNeovim": true,
+  "vim.foldfix": true,
   "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.incsearch": true,
   "vim.leader": "<space>",
@@ -476,4 +477,5 @@
   },
   "breadcrumbs.enabled": false,
   "Lua.telemetry.enable": true,
+  "markdown-preview-enhanced.previewTheme": "github-dark.css",
 }
