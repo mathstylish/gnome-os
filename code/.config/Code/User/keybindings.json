@@ -25,7 +25,6 @@
     "key": "ctrl+e",
     "command": "-workbench.action.quickOpen"
   },
-
   // Explorer navigation
   {
     "key": "r",
@@ -72,7 +71,6 @@
     "command": "explorer.newFolder",
     "when": "filesExplorerFocus && !inputFocus"
   },
-
   // GIT
   {
     "key": "ctrl+g",
@@ -92,7 +90,6 @@
     "command": "-workbench.action.toggleSidebarVisibility",
     "when": "view.workbench.scm.visible"
   },
-
   // QUICK OPEN (<leader>ff or ctrl + p)
   {
     "key": "ctrl+j",
@@ -104,12 +101,16 @@
     "command": "workbench.action.quickOpenNavigatePrevious",
     "when": "inQuickOpen"
   },
-
   // EDITOR
   {
     "key": "ctrl+l",
     "command": "workbench.action.focusActiveEditorGroup",
     "when": "sideBarFocus"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.focusSideBar",
+    "when": "sideBarVisible && editorFocus && activeEditorGroupIndex == 1"
   },
   {
     "key": "alt+j",
@@ -134,12 +135,12 @@
   {
     "key": "ctrl+h",
     "command": "workbench.action.focusLeftGroup",
-    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+    "when": "editorTextFocus && multipleEditorGroups && activeEditorGroupIndex != 1 && vim.active && vim.mode != 'Insert'"
   },
   {
     "key": "ctrl+l",
     "command": "workbench.action.focusRightGroup",
-    "when": "editorTextFocus && vim.active && vim.mode != 'Insert'"
+    "when": "editorTextFocus && multipleEditorGroups &&& activeEditorGroupIndex != 1 && vim.active && vim.mode != 'Insert'"
   },
   {
     "key": "ctrl+k",
@@ -175,7 +176,6 @@
     "command": "closeMarkersNavigation",
     "when": "markersNavigationVisible && !config.editor.stablePeek"
   },
-
   // SEARCH (AND REPLACE)
   {
     "key": "ctrl+k",
@@ -212,7 +212,6 @@
     "command": "search.action.replaceAll",
     "when": "replaceActive && searchViewletVisible && !findWidgetVisible"
   },
-
   // EDITOR SEARCH (AND REPLACE)
   {
     "key": "ctrl+k",
@@ -244,7 +243,6 @@
     "command": "closeFindWidget",
     "when": "editorFocus && findWidgetVisible && !isComposing"
   },
-
   // MARKERS (PROBLEMS) 
   {
     "key": "ctrl+k",
@@ -290,6 +288,16 @@
     "key": "alt+p",
     "command": "workbench.action.terminal.kill",
     "when": "terminal.active"
+  },
+  {
+    "key": "ctrl+h",
+    "command": "workbench.action.terminal.focusPreviousPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
+  },
+  {
+    "key": "ctrl+l",
+    "command": "workbench.action.terminal.focusNextPane",
+    "when": "terminalFocus && terminalHasBeenCreated || terminalFocus && terminalProcessSupported"
   },
   // VIM
   {
