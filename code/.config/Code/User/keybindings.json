@@ -170,12 +170,12 @@
   {
     "key": "shift+alt+k",
     "command": "editor.action.insertCursorAbove",
-    "when": "editorTextFocus && vim.mode == 'Insert'"
+    "when": "editorTextFocus && vim.mode == 'Insert' || vim.mode == 'Normal'"
   },
   {
     "key": "shift+alt+j",
     "command": "editor.action.insertCursorBelow",
-    "when": "editorTextFocus && vim.mode == 'Insert'"
+    "when": "editorTextFocus && vim.mode == 'Insert' || vim.mode == 'Normal'"
   },
   {
     "key": "ctrl+j",
