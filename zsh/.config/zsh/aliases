@@ -9,8 +9,6 @@ elif [[ -x "$(command -v nvim)" ]]; then
   alias vimdiff='nvim -d'
 fi
 
-#[ -x "$(command -v nvim)" ] && alias vim='nvim' vimdiff='nvim -d'
-
 # sudo not required for some system commands
 for command in mount umount sv pacman updatedb su shutdown poweroff reboot systemctl ; do
   alias $command="sudo $command"
@@ -32,9 +30,11 @@ alias tmp='cd /tmp'                                                 # go to /tmp
 alias dws='cd $HOME/Development'
 alias zed='vim $ZDOTDIR/.zshrc'                                     # edit .zshrc quickly
 alias zea='vim $ZDOTDIR/aliases'
+alias zef='vim $ZDOTDIR/functions'
 alias zre='source $ZDOTDIR/.zshrc'                                  # source .zshrc quickly
 alias ked='vim $XDG_CONFIG_HOME/kitty/kitty.conf'
 alias led='vim $XDG_CONFIG_HOME/lvim/config.lua'
+alias ted='vim $XDG_CONFIG_HOME/tmux/tmux.conf'
 alias pip='python -m pip'                                           # install python modules correctly
 alias wget='wget --hsts-file="$XDG_CACHE_HOME/wget-hsts"'           # XDG BASE DIRECTORY wget
 alias clear="printf '\033[2J\033[3J\033[1;1H'"                      # clear with no scrollback
@@ -47,7 +47,6 @@ alias gl='git log'
 alias glo='git log --oneline'
 alias gp='git push'
 alias gpu='git push -u origin main'
-alias totext="xxd -r -p && echo ''"                                 # -r hex to ascii, -p to plain text
 
 cpf() { cat $1 | xclip -sel clip  }                                 # content file to clipboard
 cgu() {                                                             # change my ssh identity key if i need to push to other git account

@@ -36,7 +36,7 @@ zsh_add_plugin "zsh-users/zsh-autosuggestions"
 zsh_add_plugin "zsh-users/zsh-syntax-highlighting"
 zsh_add_plugin "zsh-users/zsh-completions"
 zsh_add_plugin "hlissner/zsh-autopair"
-zsh_add_plugin "spaceship-prompt/spaceship-prompt"
+# zsh_add_plugin "spaceship-prompt/spaceship-prompt"
 
 # normal files to source
 zsh_add_file "history"
@@ -56,3 +56,7 @@ fpath=(${ZDOTDIR}/plugins/zsh-completions/src $fpath)
 
 # load compinit for working completions
 zsh_add_file "compinit"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
