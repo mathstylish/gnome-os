@@ -3,9 +3,9 @@
   "editor.acceptSuggestionOnCommitCharacter": false,
   "editor.cursorBlinking": "smooth",
   "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": true
+    "source.fixAll.eslint": true,
   },
-  "editor.fontFamily": "'FiraCode Nerd Font', monospace",
+  "editor.fontFamily": "'FiraCode Nerd Font', 'FiraCode NF', monospace",
   "editor.fontLigatures": true,
   "editor.fontSize": 13.5,
   "editor.lineNumbers": "relative",
@@ -24,6 +24,7 @@
   // Explorer
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
+  "explorer.autoReveal": false,
   // Files
   "files.autoSave": "afterDelay",
   "files.autoSaveDelay": 500,
@@ -53,7 +54,6 @@
     ".prettierrc": "json"
   },
   "workbench.editor.labelFormat": "short",
-  "workbench.iconTheme": "material-icon-theme",
   "workbench.startupEditor": "none",
   // Window
   "window.menuBarVisibility": "toggle",
@@ -68,11 +68,10 @@
     },
   },
   "terminal.integrated.allowChords": false,
-  "terminal.integrated.defaultProfile.windows": "PowerShell",
-  "terminal.integrated.fontFamily": "FiraCode Nerd Font Mono",
+  "terminal.integrated.fontFamily": "'FiraCode NF', 'FiraCode Nerd Font'",
   "terminal.integrated.splitCwd": "workspaceRoot",
   "terminal.external.linuxExec": "kitty",
-  "terminal.external.windowsExec": "pwsh",
+  "terminal.external.windowsExec": "lazygit",
   // Security
   "security.workspace.trust.enabled": false,
   // Language
@@ -432,7 +431,6 @@
     "*.proto": "3d",
     "*.webpack.js": "webpack"
   },
-  "workbench.productIconTheme": "fluent-icons",
   // Advanced new file
   "advancedNewFile.exclude": {
     "node_modules": true,
@@ -447,36 +445,22 @@
     "root"
   ],
   "explorer.confirmDragAndDrop": false,
-  "workbench.colorTheme": "Tokyo Night",
   "[html]": {
     "editor.defaultFormatter": "vscode.html-language-features"
   },
   "[css]": {
     "editor.defaultFormatter": "vscode.css-language-features"
   },
-  "editor.tokenColorCustomizations": {
-    "[Tokyo Night]": { // or "[Tokyo Night Storm]"
-      "textMateRules": [
-        {
-          "scope": [
-            "comment",
-            "meta.var.expr storage.type",
-            "keyword.control.flow",
-            "keyword.control.return",
-            "meta.directive.vue punctuation.separator.key-value.html",
-            "meta.directive.vue entity.other.attribute-name.html",
-            "tag.decorator.js entity.name.tag.js",
-            "tag.decorator.js punctuation.definition.tag.js",
-            "storage.modifier"
-          ],
-          "settings": {
-            "fontStyle": ""
-          }
-        }
-      ]
-    }
-  },
   "breadcrumbs.enabled": false,
   "Lua.telemetry.enable": true,
   "markdown-preview-enhanced.previewTheme": "github-dark.css",
+
+  "livePreview.autoRefreshPreview": "On All Changes in Editor",
+  "livePreview.portNumber": 5050,
+  "workbench.colorTheme": "Tokyo Dark Plus",
+  "java.dependency.packagePresentation": "hierarchical",
+  "java.dependency.refreshDelay": 1000,
+  "workbench.tree.indent": 4,
+  "workbench.iconTheme": "material-icon-theme",
+  "window.zoomLevel": 1,
 }
