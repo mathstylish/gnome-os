@@ -1,33 +1,20 @@
--- general neovim
-
--- clipboard configuration
-local has = vim.fn.has
-local is_win = has "win32"
-
-if is_win then
-  vim.opt.clipboard:prepend { 'unnamed', 'unnamedplus' }
-else
-  vim.opt.clipboard:append { 'unnamedplus' }
-end
-
+-- vim options
 vim.opt.relativenumber = true
 
--- general lunarvim
+-- general
+lvim.log.level = "info"
+lvim.format_on_save = {
+  enabled = true,
+  pattern = "*.lua",
+  timeout = 1000,
+}
 
-lvim.log.level = "warn"
-lvim.format_on_save = false
-
--- Change theme settings
-lvim.colorscheme = "tokyonight"
-lvim.transparent_window = true
--- lvim.builtin.theme.options.dim_inactive = true
--- lvim.builtin.theme.options.style = "storm"
-
+-- keymappings <https://www.lunarvim.org/docs/configuration/keybindings>
 lvim.leader = "space"
-lvim.keys.normal_mode["<leader>w"] = ":w<cr>"
+lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 lvim.keys.normal_mode["<leader>q"] = ":q<cr>"
 lvim.keys.normal_mode["<leader>vs"] = ":vsplit<cr>"
-lvim.keys.normal_mode["<leader>hs"] = ":split<cr>"
+lvim.keys.normal_mode["<leader>vh"] = ":split<cr>"
 lvim.keys.normal_mode["<S-l>"] = ":BufferLineCycleNext<CR>"
 lvim.keys.normal_mode["<S-h>"] = ":BufferLineCyclePrev<CR>"
 lvim.keys.insert_mode["kj"] = "<Esc>"
@@ -39,7 +26,7 @@ lvim.keys.visual_mode["p"] = '"_dP'
 lvim.keys.normal_mode["-"] = "$"
 lvim.keys.visual_mode["-"] = "$"
 
--- Override telescope defaults
+
 local _, actions = pcall(require, "telescope.actions")
 lvim.builtin.telescope.defaults.mappings = {
   n = {
@@ -58,63 +45,118 @@ lvim.builtin.which_key.mappings["f"] = {
   f = { "<cmd>Telescope find_files<CR>", "Find Files" },
   t = { "<cmd>Telescope live_grep<CR>", "Search Text" },
   p = { "<cmd>Telescope projects<CR>", "Projects" },
-  b = { "<cmd>Telescope buffers<CR>", "Show Buffers"}
+  b = { "<cmd>Telescope buffers<CR>", "Show Buffers" }
 }
 
--- TODO: User Config for predefined plugins
--- After changing plugin config exit and reopen LunarVim, Run :PackerInstall :PackerCompile
+-- -- Change theme settings
+lvim.colorscheme = "gruvbox"
+lvim.transparent_window = true
+
+-- After changing plugin config exit and reopen LunarVim, Run :PackerSync
 lvim.builtin.alpha.active = true
 lvim.builtin.alpha.mode = "dashboard"
-lvim.builtin.notify.active = true
 lvim.builtin.terminal.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.setup.renderer.icons.show.git = false
 
--- if you don't want all the parsers change this to a table of the ones you want
-lvim.builtin.treesitter.ensure_installed = {
-  "bash",
-  "c",
-  "javascript",
-  "json",
-  "lua",
-  "python",
-  "typescript",
-  "tsx",
-  "css",
-  "rust",
-  "java",
-  "yaml",
+-- Automatically install missing parsers when entering buffer
+lvim.builtin.treesitter.auto_install = true
+
+local formatters = require "lvim.lsp.null-ls.formatters"
+formatters.setup {
+  {
+    command = "clang-format",
+    extra_args = { "--style", "LLVM" },
+    filetypes = { "c" },
+  },
+}
+-- c encoding problem workaround
+vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "clangd" })
+local capabilities = require("lvim.lsp").common_capabilities()
+capabilities.offsetEncoding = { "utf-16" }
+local opts = { capabilities = capabilities }
+require("lvim.lsp.manager").setup("clangd", opts)
+
+lvim.plugins = {
+  { "kvrohit/mellow.nvim" },
+  { "ellisonleao/gruvbox.nvim" },
 }
 
-lvim.builtin.treesitter.ignore_install = { "haskell" }
-lvim.builtin.treesitter.highlight.enable = true
+-- lvim.builtin.dap.active = true
 
--- generic LSP settings
+-- install codelldb with :MasonInstall codelldb
+-- configure nvim-dap (codelldb)
+-- lvim.builtin.dap.on_config_done = function(dap)
+--   dap.adapters.codelldb = {
+--     type = "server",
+--     port = "${port}",
+--     executable = {
+--       -- provide the absolute path for `codelldb` command if not using the one installed using `mason.nvim`
+--       command = "codelldb",
+--       args = { "--port", "${port}" },
 
--- -- make sure server will always be installed even if the server is in skipped_servers list
--- lvim.lsp.installer.setup.ensure_installed = {
---     "sumeko_lua",
---     "jsonls",
+--       -- On windows you may have to uncomment this:
+--       -- detached = false,
+--     },
+--   }
+
+--   dap.configurations.cpp = {
+--     {
+--       name = "Launch file",
+--       type = "codelldb",
+--       request = "launch",
+--       program = function()
+--         local path
+--         vim.ui.input({ prompt = "Path to executable: ", default = vim.loop.cwd() .. "/build/" }, function(input)
+--           path = input
+--         end)
+--         vim.cmd [[redraw]]
+--         return path
+--       end,
+--       cwd = "${workspaceFolder}",
+--       stopOnEntry = false,
+--     },
+--   }
+
+--   dap.configurations.c = dap.configurations.cpp
+-- end
+
+
+
+-- lvim.autocommands = {
+--   {
+--     "BufEnter", {
+--       pattern = { "*.c", "*.h" },
+--       callback = function()
+--         vim.cmd [[setlocal tabstop=4 shiftwidth=4]]
+--       end
+--     }
+--   }
 -- }
--- -- change UI setting of `LspInstallInfo`
--- -- see <https://github.com/williamboman/nvim-lsp-installer#default-configuration>
--- lvim.lsp.installer.setup.ui.check_outdated_servers_on_open = false
--- lvim.lsp.installer.setup.ui.border = "rounded"
--- lvim.lsp.installer.setup.ui.keymaps = {
---     uninstall_server = "d",
---     toggle_server_expand = "o",
+
+-- local linters = require "lvim.lsp.null-ls.linters"
+-- linters.setup {
+--   {
+--     command = "cpplint",
+--     args = { "--filter", "-legal/copyright" },
+--     filetypes = { "c" },
+--   }
 -- }
 
--- ---@usage disable automatic installation of servers
+-- lvim.builtin.treesitter.ignore_install = { "haskell" }
+
+-- -- generic LSP settings <https://www.lunarvim.org/docs/languages#lsp-support>
+
+-- --- disable automatic installation of servers
 -- lvim.lsp.installer.setup.automatic_installation = false
 
--- ---configure a server manually. !!Requires `:LvimCacheReset` to take effect!!
--- ---see the full default list `:lua print(vim.inspect(lvim.lsp.automatic_configuration.skipped_servers))`
+-- ---configure a server manually. IMPORTANT: Requires `:LvimCacheReset` to take effect
+-- ---see the full default list `:lua =lvim.lsp.automatic_configuration.skipped_servers`
 -- vim.list_extend(lvim.lsp.automatic_configuration.skipped_servers, { "pyright" })
 -- local opts = {} -- check the lspconfig documentation for a list of all possible options
 -- require("lvim.lsp.manager").setup("pyright", opts)
 
--- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. !!Requires `:LvimCacheReset` to take effect!!
+-- ---remove a server from the skipped list, e.g. eslint, or emmet_ls. IMPORTANT: Requires `:LvimCacheReset` to take effect
 -- ---`:LvimInfo` lists which server(s) are skipped for the current filetype
 -- lvim.lsp.automatic_configuration.skipped_servers = vim.tbl_filter(function(server)
 --   return server ~= "emmet_ls"
@@ -130,53 +172,34 @@ lvim.builtin.treesitter.highlight.enable = true
 --   buf_set_option("omnifunc", "v:lua.vim.lsp.omnifunc")
 -- end
 
--- -- set a formatter, this will override the language server formatting capabilities (if it exists)
+-- -- linters and formatters <https://www.lunarvim.org/docs/languages#lintingformatting>
 -- local formatters = require "lvim.lsp.null-ls.formatters"
 -- formatters.setup {
---   { command = "black", filetypes = { "python" } },
---   { command = "isort", filetypes = { "python" } },
+--   { command = "stylua" },
 --   {
---     -- each formatter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
 --     command = "prettier",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--print-with", "100" },
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
+--     extra_args = { "--print-width", "100" },
 --     filetypes = { "typescript", "typescriptreact" },
 --   },
 -- }
-
--- -- set additional linters
 -- local linters = require "lvim.lsp.null-ls.linters"
 -- linters.setup {
 --   { command = "flake8", filetypes = { "python" } },
 --   {
---     -- each linter accepts a list of options identical to https://github.com/jose-elias-alvarez/null-ls.nvim/blob/main/doc/BUILTINS.md#Configuration
 --     command = "shellcheck",
---     ---@usage arguments to pass to the formatter
---     -- these cannot contain whitespaces, options such as `--line-width 80` become either `{'--line-width', '80'}` or `{'--line-width=80'}`
---     extra_args = { "--severity", "warning" },
---   },
---   {
---     command = "codespell",
---     ---@usage specify which filetypes to enable. By default a providers will attach to all the filetypes it supports.
---     filetypes = { "javascript", "python" },
+--     args = { "--severity", "warning" },
 --   },
 -- }
 
--- Additional Plugins
+-- -- Additional Plugins <https://www.lunarvim.org/docs/plugins#user-plugins>
 -- lvim.plugins = {
---   {
---     "NTBBloodbath/rest.nvim"
---   },
+--     {
+--       "folke/trouble.nvim",
+--       cmd = "TroubleToggle",
+--     },
 -- }
 
--- Autocommands (https://neovim.io/doc/user/autocmd.html)
--- vim.api.nvim_create_autocmd("BufEnter", {
---   pattern = { "*.json", "*.jsonc" },
---   -- enable wrap mode for json files only
---   command = "setlocal wrap",
--- })
+-- -- Autocommands (`:help autocmd`) <https://neovim.io/doc/user/autocmd.html>
 -- vim.api.nvim_create_autocmd("FileType", {
 --   pattern = "zsh",
 --   callback = function()
