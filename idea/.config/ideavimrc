@@ -1,99 +1,72 @@
-"" Common settings -------------------------
-"" let you copy paste from the system and Intellij clipboards.
+" general
 set clipboard+=unnamed
 set clipboard+=ideaput
-"" keeps few lines visible when scrolling.
-set scrolloff=5
-"" highlights the search string while typing.
 set incsearch
-"" disable bell sound
-set visualbell
-set noerrorbells
-"" shows both the line number and the relative line number in the gutter.
 set number relativenumber
-"" leader key
-let mapleader = " "
-"" i hate esc
-imap jk <Esc>
-imap kj <Esc>
-"" save
-nnoremap <leader>w :action SaveAll<CR>
-"" Terminal
-nnoremap <c-t> :action ActivateTerminalToolWindow<CR>
-nnoremap <leader>t :action Terminal.OpenInTerminal<CR>
-"" close buffer
-nnoremap <leader>c :action CloseContent<CR>
-nnoremap <leader>bc :action CloseAllEditors<CR>
-"" split
-nnoremap <leader>vs :action SplitVertically<CR>
-nnoremap <leader>hs :action SplitHorizontally<CR>
-"" split navigation
-sethandler <c-h> a:vim
-sethandler <c-l> a:vim
-sethandler <c-j> a:vim
-sethandler <c-k> a:vim
-nnoremap <c-h> <c-w>h
-nnoremap <c-l> <c-w>l
-nnoremap <c-j> <c-w>j
-nnoremap <c-k> <c-w>k
-"" move lines
-"up"
-inoremap <A-k> :action MoveStatementUp<CR>
-nnoremap <A-k> :action MoveStatementUp<CR>
-vnoremap <A-k> :action MoveStatementUp<CR>
-"down"
-inoremap <A-j> :action MoveStatementDown<CR>
-nnoremap <A-j> :action MoveStatementDown<CR>
-vnoremap <A-j> :action MoveStatementDown<CR>
-"" tab navigation
-nnoremap <s-J> :action PreviousTab<CR>
-nnoremap <s-K> :action NextTab<CR>
-""" Editing source code
-set ideajoin
+set visualbell
 set idearefactormode=keep
-"" Indent
-vnoremap < <gv
-vnoremap > >gv
-"" Jump into methods declarations
-nnoremap [[ :action MethodUp<CR>
-nnoremap ]] :action MethodDown<CR>
-"" Folding
-nnoremap zc :action CollapseRegion<CR>
-nnoremap zo :action ExpandRegion<CR>
-nnoremap <leader>zc :action CollapseAllRegions<CR>
-nnoremap <leader>zo :action ExpandAllRegions<CR>
-"" Comment
-nnoremap <leader>/ :action CommentByLineComment<CR>
-"" Editing source code
-nnoremap <leader>lr :action Refactorings.QuickListPopupAction<CR>
-vnoremap <leader>lr :action Refactorings.QuickListPopupAction<CR>
-nnoremap <Leader>lf  :action ReformatCode<CR>
-nnoremap <leader>lo :action OptimizeImports<CR>
-nnoremap <c-r> :action RecentFiles<CR>
-nnoremap <leader>sl :action RecentLocations<CR>
-nnoremap <leader>sh  :action LocalHistory.ShowHistory<CR>
-"" Errors
-nnoremap ge :action GotoNextError<CR>
-nnoremap gE :action GotoPreviousError<CR>
-"" Source code navigation
-"" Live grep
-nnoremap <leader>st :action FindInPath<CR>
-nnoremap <c-a> :action GotoAction<CR>
-"" Find files
-nnoremap <leader>sf :action GotoFile<CR>
-nnoremap <leader>su :action FindUsages<CR>
-nnoremap <c-s> :action FileStructurePopup<CR>
-nnoremap <c-o> :action GotoSymbol<CR>
-nnoremap gc :action GotoClass<CR>
-nnoremap gi :action GotoImplementation<CR>
-nnoremap gd :action GotoDeclaration<CR>
-nnoremap gp :action GotoSuperMethod<CR>
-nnoremap gt :action GotoTest<CR>
-nnoremap gb :action Back<CR>
-nnoremap gf :action Forward<CR>
-"" Put semicolon end of line
-nnoremap <leader>kj <Esc>A;
-"" Create function structure and go to body
-nnoremap <leader>nn <Esc>A(<Esc>A {<CR>
-"" Create function structure and go to put parameters
-nnoremap <leader>mm <Esc>A(<Esc>A {<CR><Esc>kf(a
+set iskeyword+=-
+
+" plugins
+set NERDTree
+set easymotion
+
+" basic mapping
+let mapleader = " "
+imap kj <Esc>
+nmap db vb\"_d
+nmap <c-h> <c-w>h
+nmap <c-l> <c-w>l
+nmap <c-j> <c-w>j
+nmap <c-k> <c-w>k
+vmap < <gv
+vmap > >gv
+
+" actions
+nmap <leader>w <action>:(SaveAll)<CR>
+nmap <leader>c <action>(CloseContent)
+nmap <leader>C <action>(CloseAllEditors)
+nmap <leader>vs <action>(SplitVertically)
+nmap <leader>vh <action>(SplitHorizontally)
+nmap <leader>m <action>(MoveEditorToOppositeTabGroup)
+nmap <leader>N <action>(EditSourceInNewWindow)
+nmap <leader>n <action>(NextWindow)
+imap <A-k> <action>(MoveStatementUp)
+nmap <A-k> <action>(MoveStatementUp)
+vmap <A-k> <action>(MoveStatementUp)
+imap <A-j> <action>(MoveStatementDown)
+nmap <A-j> <action>(MoveStatementDown)
+vmap <A-j> <action>(MoveStatementDown)
+nmap <s-H> <action>(PreviousTab)
+nmap <s-L> <action>(NextTab)
+nmap <c-o> <action>(Back)
+
+nmap <leader>ff <action>(RecentFiles)
+nmap <leader>fa <action>(GotoFile)
+nmap gl <action>(GotoNextError)
+nmap gd <action>(GotoDeclaration)
+nmap gi <action>(GotoImplementation)
+nmap gs <action>(GotoImplementation)
+
+nmap <leader>lf <action>(ReformatCode)
+nmap <leader>lr <action>(RenameElement)
+nmap <leader>la <action>(ShowIntentionActions)
+nmap <leader>le <action>(Run)
+vmap <leader>lm <action>(ExtractMethod)
+nmap <leader>lv <action>(IntroduceVariable)
+nmap <leader>h <action>(HideActiveWindow)<CR>
+
+
+nmap <leader>i <action>(Generate)
+nmap <leader>g <action>(Git.Menu)
+
+nmap <c-t> <action>(ActivateTerminalToolWindow)
+nmap <leader>t <action>(Terminal.OpenInTerminal)
+
+nmap <c-z> <action>(ToggleDistractionFreeMode)
+
+" install IdeaVim-EasyMotion and AceJump plugins
+nmap <leader>J <Plug>(easymotion-s)
+nmap <leader>j <Plug>(easymotion-f)
+
+nmap <leader>e :NERDTree<CR>
